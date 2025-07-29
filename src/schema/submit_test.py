@@ -8,3 +8,9 @@ class AnswerItem(BaseModel):
 class TestSubmission(BaseModel):
     student_id: str
     answers: List[AnswerItem]
+
+class TestResultOut(BaseModel):
+    student_id: str
+    total_questions: int
+    correct_answers: int
+    incorrect_answers: int

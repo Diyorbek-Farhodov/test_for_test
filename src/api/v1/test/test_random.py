@@ -27,34 +27,52 @@ async def get_random_questions_by_subject(subject_id: int, db: AsyncSession = De
     if not questions:
         raise HTTPException(status_code=404, detail="Bu fan uchun savollar topilmadi")
 
+    # Savollarni random tanlash
     selected_questions = random.sample(questions, min(len(questions), 25))
 
     response = []
     session_data = []
 
     for idx, q in enumerate(selected_questions, 1):
+        # Javob matnlarini ro'yxatga yig'ish
+        answer_texts = [q.option_a, q.option_b, q.option_c, q.option_d]
+
+        # Matnlarni aralashtirib yuborish
+        random.shuffle(answer_texts)
+
+        # Option harflari doim A, B, C, D bo'ladi, lekin matnlar aralashgan
         options = [
-            OptionOut(option="A", text=q.option_a),
-            OptionOut(option="B", text=q.option_b),
-            OptionOut(option="C", text=q.option_c),
-            OptionOut(option="D", text=q.option_d),
+            OptionOut(option="A", text=answer_texts[0]),
+            OptionOut(option="B", text=answer_texts[1]),
+            OptionOut(option="C", text=answer_texts[2]),
+            OptionOut(option="D", text=answer_texts[3]),
         ]
-        random.shuffle(options)
+
+        # To'g'ri javobni topish (aralashgan matnlar ichidan)
+        if q.correct_option == answer_texts[0]:
+            correct_answer = "A"
+        elif q.correct_option == answer_texts[1]:
+            correct_answer = "B"
+        elif q.correct_option == answer_texts[2]:
+            correct_answer = "C"
+        else:
+            correct_answer = "D"
 
         question_out = QuestionTestOut(
             savol=idx,
             question_id=q.id,
             text=q.text,
             options=options,
-            correct_option=q.correct_option
+            correct_option=correct_answer  # Endi harf (A, B, C, D) qaytaradi
         )
 
         response.append(question_out)
-
         session_data.append(question_out.model_dump())
 
+    # Test sessiyasini saqlash
     test_sessions[str(subject_id)] = session_data
 
+    # Faylga yozish
     DATA_FILE.write_text(json.dumps(test_sessions, indent=4, ensure_ascii=False))
 
     return response

@@ -1,44 +1,45 @@
-from fastapi import APIRouter, UploadFile, File, Depends
-from sqlalchemy.ext.asyncio import AsyncSession
-from openpyxl import load_workbook
-import io
+import json
 
-from src.base.db import get_db
-from src.model import Question
+from fastapi import Body, APIRouter, HTTPException
+from pydantic import BaseModel
+
+from src.api.v1.test.test_random import DATA_FILE
+from src.schema.submit_test import TestSubmission, TestResultOut
 
 router = APIRouter()
 
-@router.post("/upload-questions/")
-async def upload_questions(file: UploadFile = File(...), db: AsyncSession = Depends(get_db)):
-    content = await file.read()
-    workbook = load_workbook(io.BytesIO(content))
-    sheet = workbook.active
+@router.post("/submit-test/{subject_id}", response_model=TestResultOut)
+async def submit_test(subject_id: int, submission: TestSubmission = Body(...)):
+    # Test sessiyasini yuklab olish
+    if not DATA_FILE.exists():
+        raise HTTPException(status_code=400, detail="Test sessiyasi topilmadi")
 
-    for i, row in enumerate(sheet.iter_rows(min_row=2, values_only=True), start=2):
-        text, correct_text, a, b, c, d = row
+    test_sessions_data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    session_questions = test_sessions_data.get(str(subject_id))
 
-        # Matnga qarab to‘g‘ri variant harfini aniqlaymiz
-        correct_option = None
-        if correct_text == a:
-            correct_option = "A"
-        elif correct_text == b:
-            correct_option = "B"
-        elif correct_text == c:
-            correct_option = "C"
-        elif correct_text == d:
-            correct_option = "D"
+    if not session_questions:
+        raise HTTPException(status_code=404, detail="Ushbu fan uchun test sessiyasi topilmadi")
+
+    answers_dict = {a.question_id: a.selected_option for a in submission.answers}
+
+    correct = 0
+    incorrect = 0
+
+    for q in session_questions:
+        q_id = q["question_id"]
+        correct_option = q["correct_option"]
+        selected_option = answers_dict.get(q_id)
+
+        if selected_option is None:
+            incorrect += 1  # Javob bermagan
+        elif selected_option == correct_option:
+            correct += 1
         else:
-            raise ValueError(f"{i}-qatorda to‘g‘ri javob variantlar bilan mos emas: {correct_text}")
+            incorrect += 1
 
-        question = Question(
-            text=text,
-            option_a=a,
-            option_b=b,
-            option_c=c,
-            option_d=d,
-            correct_option=correct_option
-        )
-        db.add(question)
-
-    await db.commit()
-    return {"message": "Savollar muvaffaqiyatli yuklandi"}
+    return TestResultOut(
+        student_id=submission.student_id,
+        total_questions=len(session_questions),
+        correct_answers=correct,
+        incorrect_answers=incorrect
+    )

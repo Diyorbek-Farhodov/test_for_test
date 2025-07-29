@@ -1,84 +1,96 @@
-from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, Form
+from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, Path
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
 from openpyxl import load_workbook
 import io
-import random
 
 from src.base.db import get_db
-from src.model import Question
+from src.model import Question, Subject
 
 router = APIRouter()
 
-@router.post("/upload-questions/")
+
+@router.post("/upload-questions/{subject_id}")
 async def upload_questions(
-    subject_id: int = Form(...),
-    file: UploadFile = File(...),
-    db: AsyncSession = Depends(get_db)
+        subject_id: int = Path(..., description="Subject ID raqami", gt=0),
+        file: UploadFile = File(..., description="Excel fayl (.xlsx, .xls)"),
+        db: AsyncSession = Depends(get_db)
 ):
+    # Fayl formatini tekshirish
     if not file.filename.endswith(('.xlsx', '.xls')):
         raise HTTPException(status_code=400, detail="Faqat Excel fayllar qabul qilinadi (.xlsx, .xls)")
 
+    # Subject mavjudligini tekshirish
+    subject = await db.scalar(select(Subject).where(Subject.id == subject_id))
+    if not subject:
+        raise HTTPException(status_code=404, detail=f"Subject ID {subject_id} topilmadi")
+
+    # Excel faylni o'qish
     try:
         contents = await file.read()
         workbook = load_workbook(filename=io.BytesIO(contents), data_only=True)
         sheet = workbook.active
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Excel faylni o‘qib bo‘lmadi: {e}")
+        raise HTTPException(status_code=400, detail=f"Excel faylni o'qishda xatolik: {e}")
 
     added_count = 0
     errors = []
 
-    option_positions = ['A', 'B', 'C', 'D']  # To‘g‘ri javob qaysi pozitsiyada turishi kerak
-
-    async with db.begin():
-        try:
-            for row_num, row in enumerate(sheet.iter_rows(min_row=2, values_only=True), start=2):
-                try:
-                    if len(row) < 5 or any(cell is None for cell in row[:5]):
-                        errors.append(f"{row_num}-qatorda barcha 5 ustun to‘ldirilmagan")
-                        continue
-
-                    question_text = str(row[0]).strip()
-                    correct_text = str(row[1]).strip()
-                    wrong_answers = [str(row[2]).strip(), str(row[3]).strip(), str(row[4]).strip()]
-                    random.shuffle(wrong_answers)
-
-                    # Har bir savol uchun to‘g‘ri javob pozitsiyasi belgilanadi
-                    correct_letter = option_positions[(row_num - 2) % 4]  # 0 -> A, 1 -> B, 2 -> C, 3 -> D
-
-                    options = {}
-                    wrong_index = 0
-                    for letter in option_positions:
-                        if letter == correct_letter:
-                            options[letter] = correct_text
-                        else:
-                            options[letter] = wrong_answers[wrong_index]
-                            wrong_index += 1
-
-                    question = Question(
-                        text=question_text,
-                        option_a=options['A'],
-                        option_b=options['B'],
-                        option_c=options['C'],
-                        option_d=options['D'],
-                        correct_option=correct_letter,
-                        subject_id=subject_id
-                    )
-                    db.add(question)
-                    added_count += 1
-
-                except Exception as e:
-                    errors.append(f"{row_num}-qatorda xatolik: {str(e)}")
+    # Ma'lumotlarni bazaga saqlash
+    try:
+        for row_num, row in enumerate(sheet.iter_rows(min_row=2, values_only=True), start=2):
+            try:
+                # Bo'sh qatorlarni o'tkazib yuborish
+                if not row or all(cell is None or str(cell).strip() == '' for cell in row[:5]):
                     continue
 
-            await db.commit()
+                # Kamida 5 ta ustun borligini tekshirish
+                if len(row) < 5:
+                    errors.append(f"Qator {row_num}: Kamida 5 ta ustun bo'lishi kerak")
+                    continue
 
-        except Exception as e:
-            await db.rollback()
-            raise HTTPException(status_code=500, detail=f"Bazada xatolik: {e}")
+                # Ma'lumotlarni olish
+                question_text = str(row[0]).strip() if row[0] is not None else ""
+                option_a = str(row[1]).strip() if row[1] is not None else ""
+                option_b = str(row[2]).strip() if row[2] is not None else ""
+                option_c = str(row[3]).strip() if row[3] is not None else ""
+                option_d = str(row[4]).strip() if row[4] is not None else ""
+
+                # Bo'sh maydonlarni tekshirish
+                if not all([question_text, option_a, option_b, option_c, option_d]):
+                    errors.append(f"Qator {row_num}: Barcha maydonlar to'ldirilishi kerak")
+                    continue
+
+                # To'g'ri javobni belgilash (birinchi variant to'g'ri deb hisoblanadi)
+                correct_option = option_a
+
+                # Savolni yaratish va bazaga qo'shish
+                question = Question(
+                    text=question_text,
+                    option_a=option_a,
+                    option_b=option_b,
+                    option_c=option_c,
+                    option_d=option_d,
+                    correct_option=correct_option,
+                    subject_id=subject_id
+                )
+
+                db.add(question)
+                added_count += 1
+
+            except Exception as e:
+                errors.append(f"Qator {row_num}: {str(e)}")
+
+        # O'zgarishlarni saqlash
+        await db.commit()
+
+    except Exception as e:
+        await db.rollback()
+        raise HTTPException(status_code=500, detail=f"Bazaga saqlashda xatolik: {str(e)}")
 
     return {
-        "success": added_count,
-        "errors": errors if errors else None,
-        "message": f"{added_count} ta savol muvaffaqiyatli yuklandi."
+        "message": f"{added_count} ta savol muvaffaqiyatli yuklandi",
+        "success_count": added_count,
+        "errors": errors,
+        "subject_id": subject_id
     }
