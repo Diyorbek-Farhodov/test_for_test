@@ -1,8 +1,8 @@
-"""add questions model
+"""add model
 
-Revision ID: 6fffd4caad89
+Revision ID: c827f1e109c6
 Revises: 
-Create Date: 2025-07-28 16:28:58.808805
+Create Date: 2025-08-13 09:16:20.670404
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '6fffd4caad89'
+revision: str = 'c827f1e109c6'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -29,11 +29,17 @@ def upgrade() -> None:
     op.create_table('questions',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('text', sa.String(), nullable=True),
+    sa.Column('question_image', sa.String(), nullable=True),
     sa.Column('option_a', sa.String(), nullable=True),
+    sa.Column('option_a_image', sa.String(), nullable=True),
     sa.Column('option_b', sa.String(), nullable=True),
+    sa.Column('option_b_image', sa.String(), nullable=True),
     sa.Column('option_c', sa.String(), nullable=True),
+    sa.Column('option_c_image', sa.String(), nullable=True),
     sa.Column('option_d', sa.String(), nullable=True),
-    sa.Column('correct_option', sa.String(), nullable=True),
+    sa.Column('option_d_image', sa.String(), nullable=True),
+    sa.Column('correct_option_text', sa.String(), nullable=False),
+    sa.Column('correct_option_image', sa.String(), nullable=False),
     sa.Column('subject_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['subject_id'], ['subjects.id'], ),
     sa.PrimaryKeyConstraint('id')

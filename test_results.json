@@ -1,604 +1,729 @@
 {
-    "7": [
+    "2": [
         {
             "savol": 1,
-            "question_id": 544,
-            "text": "GTQ uchun yna   qanday ko’rsatkichlar asosiy ko’rsatkichlar hisoblanadi ?",
+            "question_id": 79,
+            "text": "Gaz turbinasining yonish kamerasida yonish harorati qanchaga yetadi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "solishtirma havo miqdori,"
+                    "text": "1500 K",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "solishtirma havo miqdori, solishtirma issiqlik miqdori, solishtirma yoqilg’i miqdori"
+                    "text": "2000 K",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "solishtirma issiqlik miqdori, solishtirma yoqilg’i miqdori"
+                    "text": "1100 K",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "solishtirma issiqlik miqdori, solishtirma yoqilg’i miqdori"
+                    "text": "3500 K",
+                    "image": null
                 }
             ],
             "correct_option": "B"
         },
         {
             "savol": 2,
-            "question_id": 556,
-            "text": "Birinchi turbinada ishlagan gazlar qaysi qurilmaga  kelib tushadi ?",
+            "question_id": 8,
+            "text": "Bug' turbinali qurilmalarning prinsipial sxemasida yuqori bosimli qizdirgich qaerda joylashtiriladi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "kompressor"
+                    "text": "qozon va o'rta bosimli silindr orasid",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "ikkinchi yonish kamerasig"
+                    "text": "deaerator va ekonomayzer orasida",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "gaz turbinasining o’ziga"
+                    "text": "ta'minot nasosi va qozon o'rtasida",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "yoqilg’i nasosiga"
+                    "text": "deaerator va qozon o'rtasida",
+                    "image": null
+                }
+            ],
+            "correct_option": "A"
+        },
+        {
+            "savol": 3,
+            "question_id": 77,
+            "text": "Gazlar ikkinchi yonish kamerasiga qo’shimcha issiqlik olib (yonish hisobiga) qaysi qurilmaga tushadi?",
+            "img": null,
+            "options": [
+                {
+                    "option": "A",
+                    "text": "yonish kamerasiga",
+                    "image": null
+                },
+                {
+                    "option": "B",
+                    "text": "ikkinchi turbinag",
+                    "image": null
+                },
+                {
+                    "option": "C",
+                    "text": "birinchi turbinaga",
+                    "image": null
+                },
+                {
+                    "option": "D",
+                    "text": "regeneratorga",
+                    "image": null
                 }
             ],
             "correct_option": "B"
         },
         {
-            "savol": 3,
-            "question_id": 491,
-            "text": "Gaz turbinalarida boshlang’ich bosim bug’ turbinalariga nisbatan qanday holatda bo’ladi?",
-            "options": [
-                {
-                    "option": "A",
-                    "text": "Yuqori"
-                },
-                {
-                    "option": "B",
-                    "text": "Farqlanmaydi"
-                },
-                {
-                    "option": "C",
-                    "text": "Past"
-                },
-                {
-                    "option": "D",
-                    "text": "Juda kam farqlanadi"
-                }
-            ],
-            "correct_option": "C"
-        },
-        {
             "savol": 4,
-            "question_id": 545,
-            "text": "Gaz turbina qurilmasi ichki quvvati formulasi ?",
+            "question_id": 96,
+            "text": "Ish jismining 1 kg/s massaviy sarfida to’g’ri keladigan kompressorda iste'mol qilingan quvvat Nк ?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "δ = li /lt = (lt – lk) / lt"
+                    "text": "897,328 кВт",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "ηi = lg / qy"
+                    "text": "317,545 кВт",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "qy = Sq"
+                    "text": "615,094 кВт",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "Ni = Gx li"
+                    "text": "294,574 кВт",
+                    "image": null
                 }
             ],
-            "correct_option": "D"
+            "correct_option": "B"
         },
         {
             "savol": 5,
-            "question_id": 463,
-            "text": "Bug' turbinasini prinsipial sxemasiga kiruvchi elementlarni sanang?",
+            "question_id": 85,
+            "text": "Ichki yo’qotishlarga  qaysi yo’qotishlar  kiradi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, kompressor, nasoslar"
+                    "text": "kompressor va turbina ichidagi ishqalanish, ventilyatsiya, issiqlikning qaytish lardagi yo’qotishlar",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, nasoslar, suv – suv tipidagi qizdirgich"
+                    "text": "yonish kamerasidagi issiqlik yo’qotilishi, gidravlik qarshiliklar, regeneratordagi, havo quvurlaridagi",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "Ishga tushiruvchi dvigatel, Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, nasoslar, suv – suv tipidagi qizdirgich"
+                    "text": "bundan tashqari, ichki yo’qotishlarga yonish kamerasidagi issiqlik yo’qotilishi, gidravlik qarshiliklar, regeneratordagi, havo quvurlaridagi, sovitish tizimidagi yo’qotishlarni ham kiritish mumkin",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, nasoslar"
+                    "text": "kompressor va turbina ichidagi ishqalanish, ventilyatsiya, issiqlikning qaytishi, tirqishlar orqali, kuraklardagi, pog’onalardagi yo’qotishlar; bundan tashqari, ichki yo’qotishlarga yonish kamerasidagi issiqlik yo’qotilishi, gidravlik qarshiliklar, regeneratordagi, havo quvurlaridagi, sovitish tizimidagi yo’qotishlarni ham kiritish mumkin",
+                    "image": null
                 }
             ],
             "correct_option": "D"
         },
         {
             "savol": 6,
-            "question_id": 547,
-            "text": "Ish jismining 1 kg/s massaviy sarfida to’g’ri keladigan GTQ elektrogeneratorining quvvati  Neg  nimaga teng?",
+            "question_id": 10,
+            "text": "Bug' turbinasini prinsipial sxemasiga kiruvchi elementlarni sanang?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "294,574 кВт"
+                    "text": "Ishga tushiruvchi dvigatel, Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, nasoslar, suv – suv tipidagi qizdirgich",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "317,545 кВт"
+                    "text": "Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, nasoslar, suv – suv tipidagi qizdirgich",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "615,094 кВт"
+                    "text": "Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, nasoslar",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "897,328 кВт"
-                }
-            ],
-            "correct_option": "A"
-        },
-        {
-            "savol": 7,
-            "question_id": 506,
-            "text": "Gaz turbinalarining yonish kameralari turlari to’g’ri ko’rsatilgan qatorni toping?",
-            "options": [
-                {
-                    "option": "A",
-                    "text": "faqat individual"
-                },
-                {
-                    "option": "B",
-                    "text": "faqat quvurli – xalqasimon"
-                },
-                {
-                    "option": "C",
-                    "text": "faqat sektsiyali ko’p quvurli"
-                },
-                {
-                    "option": "D",
-                    "text": "individual, sektsiyali ko’p quvurli, xalqasimon, quvurli – xalqasimon"
-                }
-            ],
-            "correct_option": "D"
-        },
-        {
-            "savol": 8,
-            "question_id": 548,
-            "text": "Ish jismining 1 kg/s massaviy sarfida to’g’ri keladigan GTning quvvati NGТ nimaga teng?",
-            "options": [
-                {
-                    "option": "A",
-                    "text": "317,545 кВт"
-                },
-                {
-                    "option": "B",
-                    "text": "897,328 кВт"
-                },
-                {
-                    "option": "C",
-                    "text": "615,094 кВт"
-                },
-                {
-                    "option": "D",
-                    "text": "294,574 кВт"
+                    "text": "Issiqlik almashingich, turbina, elektrogenerator, bug' generatori, qizdirgichlar, kompressor, nasoslar",
+                    "image": null
                 }
             ],
             "correct_option": "C"
         },
         {
-            "savol": 9,
-            "question_id": 499,
-            "text": "Gaz turbinasi termodinamik tsiklning termik fikda olingan foydali ish belgilanishi?",
+            "savol": 7,
+            "question_id": 113,
+            "text": "Gaz turbinalarida yoqilg’i qaysi qurilma yordamida yetkazib beriladi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "I0"
+                    "text": "kompressor",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "I0t"
+                    "text": "gaz turbinasining o’zid",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "q1"
+                    "text": "yoqilg’i nasosi",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "q2"
+                    "text": "yonish kamerasi",
+                    "image": null
                 }
             ],
-            "correct_option": "A"
+            "correct_option": "C"
         },
         {
-            "savol": 10,
-            "question_id": 487,
-            "text": "Gaz turbina qurilmalari bug’ turbinalariga nisbatan qanday afzalliklariga ega?",
+            "savol": 8,
+            "question_id": 97,
+            "text": "Ish jismining 1 kg/s massaviy sarfida to’g’ri keladigan yonish kamerasiga yoqilg'i bilan berilayotgan issiqlik Qcg ?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "ixcham, metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "294,574 кВт",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "Ixcham, kondensator qurilmasining yo’qligi, konstruktsiyasining soddaligi va qulayligi, metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "897,328 кВт",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "konstruktsiyasining soddaligi va qulayligi, metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "317,545  кВт",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "615,094 кВ",
+                    "image": null
                 }
             ],
             "correct_option": "B"
         },
         {
-            "savol": 11,
-            "question_id": 509,
-            "text": "Gaz turbinasi termodinamik tsiklning termik fikda olingan foydali ish belgilanishi?",
+            "savol": 9,
+            "question_id": 30,
+            "text": "Gaz turbina qurilmalarida qanday turdagi kompressorlar qo’llaniladi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "I0t"
+                    "text": "faqat markaziy yo’nalishli",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "q1"
+                    "text": "faqat o’q yo’nalishli",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "I0"
+                    "text": "o’q yo’nalishli va markaziy yo’nalishli",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "q2"
+                    "text": "o’q yo’nalishli va aksial",
+                    "image": null
                 }
             ],
             "correct_option": "C"
         },
         {
-            "savol": 12,
-            "question_id": 469,
-            "text": "Bug’-gaz qurilmalarida fiki nechaga tenglashsadi?",
+            "savol": 10,
+            "question_id": 106,
+            "text": "Gaz turbinasining yonish kamerasida yonish harorati qanchaga yetadi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "50-60 %"
+                    "text": "2000 K",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "20-40 %"
+                    "text": "1500 K",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "70-80 %"
+                    "text": "1100 K",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "60-70 %"
+                    "text": "3500 K",
+                    "image": null
                 }
             ],
             "correct_option": "A"
         },
         {
-            "savol": 13,
-            "question_id": 492,
-            "text": "Gaz turbinalarida boshlang’ich harorat bug’ turbinalariga nisbatan qanday holatda bo’ladi?",
+            "savol": 11,
+            "question_id": 4,
+            "text": "BGQ-380 qurilmasida tabiiy gazni qanday qurilmada qizdirish ko’zda tutilgan?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "Past"
+                    "text": "deaeratorning ta'minot suvi bilan ishlaydigan suvli issiqlik almashinish qurilmasid",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "Farqlanmaydi"
+                    "text": "bug’-suv turidagi issiqlik almashinish qurilmasida",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "Yuqori"
+                    "text": "o’ta qizigan bug’ bilan ishlaydigan bug’li issiqlik almashinish qurilmasida",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "Juda kam farqlanadi"
+                    "text": "suv-suv turidagi issiqlik almashinish qurilmasida",
+                    "image": null
+                }
+            ],
+            "correct_option": "A"
+        },
+        {
+            "savol": 12,
+            "question_id": 81,
+            "text": "Ikkinchi turbinaga tushan  gazlar turbinada kengayib, …orqali chiqarib yuboriladi?",
+            "img": null,
+            "options": [
+                {
+                    "option": "A",
+                    "text": "yonish kamerasi",
+                    "image": null
+                },
+                {
+                    "option": "B",
+                    "text": "kompressor",
+                    "image": null
+                },
+                {
+                    "option": "C",
+                    "text": "regenerator",
+                    "image": null
+                },
+                {
+                    "option": "D",
+                    "text": "yoqilg’i nasosi",
+                    "image": null
                 }
             ],
             "correct_option": "C"
         },
         {
-            "savol": 14,
-            "question_id": 482,
-            "text": "Gaz turbina qurilmalari bug’ turbinalariga nisbatan qanday afzalliklariga ega?",
+            "savol": 13,
+            "question_id": 91,
+            "text": "GTQ uchun yna   qanday ko’rsatkichlar asosiy ko’rsatkichlar hisoblanadi ?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "ixcham, metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "solishtirma havo miqdori,",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "konstruktsiyasining soddaligi va qulayligi, metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "solishtirma issiqlik miqdori, solishtirma yoqilg’i miqdori",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "Ixcham, kondensator qurilmasining yo’qligi, konstruktsiyasining soddaligi va qulayligi, metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "solishtirma issiqlik miqdori, solishtirma yoqilg’i miqdori",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "metall tejamkorligi, sovitish uchun ko’p suv talab qilinmaydi"
+                    "text": "solishtirma havo miqdori, solishtirma issiqlik miqdori, solishtirma yoqilg’i miqdori",
+                    "image": null
+                }
+            ],
+            "correct_option": "D"
+        },
+        {
+            "savol": 14,
+            "question_id": 45,
+            "text": "Gaz turbinasi termodinamik tsiklning termik fikda keltirilgan issiqlik miqdori belgilanishi?",
+            "img": null,
+            "options": [
+                {
+                    "option": "A",
+                    "text": "I0",
+                    "image": null
+                },
+                {
+                    "option": "B",
+                    "text": "I0t",
+                    "image": null
+                },
+                {
+                    "option": "C",
+                    "text": "q1",
+                    "image": null
+                },
+                {
+                    "option": "D",
+                    "text": "q2",
+                    "image": null
                 }
             ],
             "correct_option": "C"
         },
         {
             "savol": 15,
-            "question_id": 505,
-            "text": "Gaz turbinalarida yoqilg’i qaysi qurilma yordamida yondiriladi?",
+            "question_id": 53,
+            "text": "Gaz turbinalarining yonish kameralari turlari to’g’ri ko’rsatilgan qatorni toping?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "gaz turbinasining o’zid"
+                    "text": "faqat quvurli – xalqasimon",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "yonish kamerasi"
+                    "text": "individual, sektsiyali ko’p quvurli, xalqasimon, quvurli – xalqasimon",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "yoqilg’i nasosi"
+                    "text": "faqat individual",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "kompressor"
+                    "text": "faqat sektsiyali ko’p quvurli",
+                    "image": null
                 }
             ],
             "correct_option": "B"
         },
         {
             "savol": 16,
-            "question_id": 520,
-            "text": "Gaz turbinali qurilmalarda havoni  nima  uchun siqiladi ?",
+            "question_id": 41,
+            "text": "Gaz turbinalarida yoqilg’i qaysi qurilma yordamida yetkazib beriladi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "qurilmaning murakkabliligi uchun"
+                    "text": "kompressor",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "havoni siqish uchun sarflanadigan mexanik ishni kamaytirish uchun"
+                    "text": "yonish kamerasi",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "gidravlik qarshiliklari ortishi uchun"
+                    "text": "gaz turbinasining o’zid",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "har bir pog’onada yo’li havoni sovitish uchun"
+                    "text": "yoqilg’i nasosi",
+                    "image": null
                 }
             ],
-            "correct_option": "B"
+            "correct_option": "D"
         },
         {
             "savol": 17,
-            "question_id": 479,
-            "text": "Drоssеllanishdagi yo’qоtish ortsa yuklama qanday o’zgaradi?",
+            "question_id": 35,
+            "text": "Gaz turbina qurilmalarida qanday turdagi kompressorlar qo’llaniladi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "kichrayadi"
+                    "text": "faqat markaziy yo’nalishli",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "o’zgarmaydi"
+                    "text": "o’q yo’nalishli va markaziy yo’nalishli",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "ortadi"
+                    "text": "o’q yo’nalishli va aksial",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "cheksizlikka intiladi"
+                    "text": "faqat o’q yo’nalishli",
+                    "image": null
                 }
             ],
-            "correct_option": "A"
+            "correct_option": "B"
         },
         {
             "savol": 18,
-            "question_id": 550,
-            "text": "Ish jismining 1 kg/s massaviy sarfida to’g’ri keladigan yonish kamerasiga yoqilg'i bilan berilayotgan issiqlik Qcg ?",
+            "question_id": 5,
+            "text": "BGQ-380 qurilmasining elektr energiyasi ishlab chiqarish bo'yicha brutto foydali ish koeffisienti necha foizni tashkil qiladi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "897,328 кВт"
+                    "text": "0.75",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "615,094 кВ"
+                    "text": "0.549",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "317,545  кВт"
+                    "text": "0.749",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "294,574 кВт"
+                    "text": "0.649",
+                    "image": null
                 }
             ],
-            "correct_option": "A"
+            "correct_option": "B"
         },
         {
             "savol": 19,
-            "question_id": 516,
-            "text": "1      Gaz turbinalarida havo qaysi qurilma yordamida siqiladi?",
+            "question_id": 98,
+            "text": "Energetik Gaz turbina qurilmalarining UQ trakti bo'ylab gaz parametrlari  to’liq ko’rsatilmagan javob ?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "yonish kamerasi"
+                    "text": "θ1 = 289 °S; h1 = 302,8 kJ/kg; θ4 = 192 °S; h4 = 201,9 kJ/kg; θ5 = θch = 162 °S; h5 = hch = 170 kJ/kg",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "kompressor"
+                    "text": "θ1 = 289 °S; h1 = 302,8 kJ/kg",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "gaz turbinasining o’zida"
+                    "text": "θ1 = 289 °S; h1 = 302,8 kJ/kg;  θ4 = 192 °S; h4 = 201,9 kJ/kg",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "yoqilg’i nasosi"
-                }
-            ],
-            "correct_option": "B"
-        },
-        {
-            "savol": 20,
-            "question_id": 501,
-            "text": "Gaz turbinalarida boshlang’ich bosim bug’ turbinalariga nisbatan qanday holatda bo’ladi?",
-            "options": [
-                {
-                    "option": "A",
-                    "text": "Past"
-                },
-                {
-                    "option": "B",
-                    "text": "Yuqori"
-                },
-                {
-                    "option": "C",
-                    "text": "Farqlanmaydi"
-                },
-                {
-                    "option": "D",
-                    "text": "Juda kam farqlanadi"
+                    "text": "θ4 = 192 °S; h4 = 201,9 kJ/kg; θ5 = θch = 162 °S; h5 = hch = 170 kJ/kg",
+                    "image": null
                 }
             ],
             "correct_option": "A"
         },
         {
-            "savol": 21,
-            "question_id": 507,
-            "text": "Gaz turbinasi deb nimaga aytiladi?",
+            "savol": 20,
+            "question_id": 90,
+            "text": "GTQ FIKini oshirish uchun turbinaga tushayotgan gaz harorati oshiriladi Hozirda qo’llaniladigan turbinalarda bu harorat  necha °S ni tashkil etadi ?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "ishchi jismi havodan iborat bo’lgan issiqlik yuritgichig*"
+                    "text": "1000–1500 °S",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "ishchi jismi yonuvchi gaz va havo aralashmasidan iborat bo’lgan issiqlik yuritgichig"
+                    "text": "1000–1400 °S",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "ishchi jismi yonuvchi gaz va suv bug’i aralashmasidan iborat bo’lgan issiqlik yuritgichiga"
+                    "text": "1400–1500 °S",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "ishchi jismi yonuvchi gaz aralashmasidan iborat bo’lgan issiqlik yuritgichiga"
+                    "text": "1300–1500 °S",
+                    "image": null
                 }
             ],
-            "correct_option": "B"
+            "correct_option": "D"
+        },
+        {
+            "savol": 21,
+            "question_id": 86,
+            "text": "Gaz turbina qurilmasini ichki yo’qotishlari barcha qurilmalari ichki yo’qotishlari yig’indisidir, bu formula ?",
+            "img": null,
+            "options": [
+                {
+                    "option": "A",
+                    "text": "Ni = Gx li;",
+                    "image": null
+                },
+                {
+                    "option": "B",
+                    "text": "ηi = lg / qy",
+                    "image": null
+                },
+                {
+                    "option": "C",
+                    "text": "qy = Sq",
+                    "image": null
+                },
+                {
+                    "option": "D",
+                    "text": "δ = li /lt = (lt – lk) / lt",
+                    "image": null
+                }
+            ],
+            "correct_option": "C"
         },
         {
             "savol": 22,
-            "question_id": 567,
-            "text": "Gaz turbinalarida yoqilg’i qaysi qurilma yordamida yondiriladi?",
+            "question_id": 99,
+            "text": "UQli BGQlarning samaradorlik ko'rsatkichini yanada ko'tarishni … amalga oshirilishi mumkin?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "kompressor"
+                    "text": "UQning issiqlik sxemasi bug' ishlab chiqaruvchi konturlar sonining ortishi",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "*yonish kamerasi"
+                    "text": "UQning ishlash rejimi, yoqilg’i ko’rsatkichlariga",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "yoqilg’i nasosi"
+                    "text": "GTQlarning chiqish gazlari haroratini pasaytirish",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "gaz turbinasining o’zida"
+                    "text": "haroratga, kompressor ko’rsatkichlariga bog’liq",
+                    "image": null
                 }
             ],
-            "correct_option": "B"
+            "correct_option": "C"
         },
         {
             "savol": 23,
-            "question_id": 543,
-            "text": "GTQ FIKini oshirish uchun turbinaga tushayotgan gaz harorati oshiriladi Hozirda qo’llaniladigan turbinalarda bu harorat  necha °S ni tashkil etadi ?",
+            "question_id": 57,
+            "text": "Gaz turbinasi termodinamik tsiklning termik fikda olingan issiqlik miqdori belgilanishi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "1300–1500 °S"
+                    "text": "q2",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "1000–1400 °S"
+                    "text": "I0t",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "1400–1500 °S"
+                    "text": "I0",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "1000–1500 °S"
+                    "text": "I0",
+                    "image": null
                 }
             ],
             "correct_option": "A"
         },
         {
             "savol": 24,
-            "question_id": 467,
-            "text": "Bug’-gaz qurilmalarida 20 asrning 60-yillarda quvvat qanchaga tenglashgan?",
+            "question_id": 37,
+            "text": "Gaz turbinalari qaysi xususiyatlari bilan bug' turbinalaridan farqlanadi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "5-700 MVt"
+                    "text": "xizmatchi personal sonining ko'pligi",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "100-1000 MVt"
+                    "text": "kichik gabariti va oson ishlatilishi bilan",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "700-1000 MVt"
+                    "text": "sovituvchi suvning ko'p isrof bo'lishi",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "500-1100 MVt"
+                    "text": "tez ishga tushirilmasligi",
+                    "image": null
                 }
             ],
-            "correct_option": "A"
+            "correct_option": "B"
         },
         {
             "savol": 25,
-            "question_id": 484,
-            "text": "Gaz turbina qurilmasining ish tsikli qanday turlarga bo’linadi?",
+            "question_id": 44,
+            "text": "Gaz turbinasi deb nimaga aytiladi?",
+            "img": null,
             "options": [
                 {
                     "option": "A",
-                    "text": "analogik va haqiqiy termodinamik tsikllarg*"
+                    "text": "ishchi jismi havodan iborat bo’lgan issiqlik yuritgichig",
+                    "image": null
                 },
                 {
                     "option": "B",
-                    "text": "faqat nazariy termodinamik tsiklga"
+                    "text": "ishchi jismi yonuvchi gaz va suv bug’i aralashmasidan iborat bo’lgan issiqlik yuritgichiga",
+                    "image": null
                 },
                 {
                     "option": "C",
-                    "text": "faqat haqiqiy termodinamik tsiklga"
+                    "text": "ishchi jismi yonuvchi gaz va havo aralashmasidan iborat bo’lgan issiqlik yuritgichig",
+                    "image": null
                 },
                 {
                     "option": "D",
-                    "text": "nazariy va haqiqiy termodinamik tsikllarg*"
+                    "text": "I0t",
+                    "image": null
                 }
             ],
-            "correct_option": "D"
+            "correct_option": "C"
         }
     ]
 }

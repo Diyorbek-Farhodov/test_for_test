@@ -1,9 +1,17 @@
-
+import datetime
 import json
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Optional, List
 
-from src.schema.submit_test import TestSession
+from pydantic import BaseModel
+
+
+class TestSession(BaseModel):
+    user_id: str
+    score: Optional[int] = None
+    answers: List[str] = []
+    start_time: datetime
+    end_time: Optional[datetime] = None
 
 test_sessions: Dict[str, TestSession] = {}
 

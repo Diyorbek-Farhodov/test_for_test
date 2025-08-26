@@ -34,40 +34,55 @@ async def get_random_questions_by_subject(subject_id: int, db: AsyncSession = De
     session_data = []
 
     for idx, q in enumerate(selected_questions, 1):
-        # Javob matnlarini ro'yxatga yig'ish
-        answer_texts = [q.option_a, q.option_b, q.option_c, q.option_d]
-
-        # Matnlarni aralashtirib yuborish
-        random.shuffle(answer_texts)
-
-        # Option harflari doim A, B, C, D bo'ladi, lekin matnlar aralashgan
-        options = [
-            OptionOut(option="A", text=answer_texts[0]),
-            OptionOut(option="B", text=answer_texts[1]),
-            OptionOut(option="C", text=answer_texts[2]),
-            OptionOut(option="D", text=answer_texts[3]),
+        answer_texts = [
+            {"text": q.option_a, "image": getattr(q, "option_a_image", None)},
+            {"text": q.option_b, "image": getattr(q, "option_b_image", None)},
+            {"text": q.option_c, "image": getattr(q, "option_c_image", None)},
+            {"text": q.option_d, "image": getattr(q, "option_d_image", None)},
         ]
 
-        # To'g'ri javobni topish (aralashgan matnlar ichidan)
-        if q.correct_option == answer_texts[0]:
-            correct_answer = "A"
-        elif q.correct_option == answer_texts[1]:
-            correct_answer = "B"
-        elif q.correct_option == answer_texts[2]:
-            correct_answer = "C"
-        else:
-            correct_answer = "D"
+        # Bazadagi to‘g‘ri javobni olish (matn yoki rasm bo‘lishi mumkin)
+        correct_answer_original = {
+            "text": q.correct_option_text,
+            "image": getattr(q, "correct_option_image", None)
+        }
+
+        # Variantlarni aralashtirish
+        random.shuffle(answer_texts)
+
+        # Option harflarini berish
+        options = [
+            OptionOut(option="A", text=answer_texts[0]["text"], image=answer_texts[0]["image"]),
+            OptionOut(option="B", text=answer_texts[1]["text"], image=answer_texts[1]["image"]),
+            OptionOut(option="C", text=answer_texts[2]["text"], image=answer_texts[2]["image"]),
+            OptionOut(option="D", text=answer_texts[3]["text"], image=answer_texts[3]["image"]),
+        ]
+
+        # Aralashgan ro‘yxatda to‘g‘ri javobni topish
+        correct_option = None
+        for letter, opt in zip(["A", "B", "C", "D"], options):
+            if opt.text == correct_answer_original["text"] and opt.image == correct_answer_original["image"]:
+                correct_option = letter
+                break
+
+        if not correct_option:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Savol ID {q.id} uchun to‘g‘ri javob topilmadi"
+            )
 
         question_out = QuestionTestOut(
             savol=idx,
             question_id=q.id,
             text=q.text,
+            img=getattr(q, "img", None),  # rasm majburiy emas
             options=options,
-            correct_option=correct_answer  # Endi harf (A, B, C, D) qaytaradi
+            correct_option=correct_option
         )
 
         response.append(question_out)
         session_data.append(question_out.model_dump())
+
 
     # Test sessiyasini saqlash
     test_sessions[str(subject_id)] = session_data

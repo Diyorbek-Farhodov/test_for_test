@@ -12,6 +12,8 @@ class Settings(BaseSettings):
     DB_PORT: str = os.getenv('DB_PORT')
     DB_NAME: str = os.getenv('DB_NAME')
 
+    HEMIS_LOGIN_URL:str = os.getenv('HEMIS_LOGIN_URL')
+    HEMIS_USER_URL: str = os.getenv('HEMIS_USER_URL')
 
 
     @property
